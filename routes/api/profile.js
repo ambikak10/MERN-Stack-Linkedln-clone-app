@@ -288,13 +288,14 @@ router.put('/education', [auth,
   }
 )
 
-// @route    DELETE api/profile/education
+// @route    DELETE api/profile/education/
 // @desc     delete education
 // @access   Private
 router.delete('/education/:education_id', auth, async (req, res) => {
   try {
     const profile = await Profile.findOne({ user: req.user.id });
     const removeIndex = profile.education.map(item => item.id).indexOf(req.params.education_id);
+    console.log(removeIndex);
     profile.education.splice(removeIndex, 1);
     await profile.save();
     res.json(profile);
