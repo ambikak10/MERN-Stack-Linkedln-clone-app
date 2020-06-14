@@ -211,7 +211,7 @@ try {
     //Get remove index
     //const removeIndex = post.comments.map(comment => comment.user.toString()).indexOf(req.user.id);
     // const removeIndex = post.comments.map(comment => comment.txt).indexOf(req.params.comment_id);
-    const removeIndex = post.comments.map(comment => {comment.id;console.log(comment.text)}).indexOf(req.params.comment_id);
+    const removeIndex = post.comments.map(comment => comment.id).indexOf(req.params.comment_id);
 
     post.comments.splice(removeIndex, 1);
     await post.save();
