@@ -105,7 +105,7 @@ try {
 
 // @route    GET api/profile
 // @desc     Get all profiles
-// @access   Private
+// @access   Public
 
 router.get('/', async(req, res) => {
     try{
