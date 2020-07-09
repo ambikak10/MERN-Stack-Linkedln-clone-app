@@ -288,6 +288,7 @@ router.put('/education', [auth,
   }
 )
 
+
 // @route    DELETE api/profile/education/
 // @desc     delete education
 // @access   Private
