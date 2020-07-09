@@ -1,11 +1,14 @@
 {
-  "name": "devconnector-udemy",
+  "name": "dev-connector",
   "version": "1.0.0",
   "description": "social media for developers",
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "server": "nodemon server"
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
+
   },
   "author": "Ambika",
   "license": "ISC",
