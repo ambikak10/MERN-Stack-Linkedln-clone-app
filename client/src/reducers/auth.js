@@ -8,7 +8,7 @@ const intialState = {
   loading: true,
   user: null
 }
-export default function(state=intialState, action) {
+export default function(state = intialState, action) {
   const {type, payload } = action;
   switch(type) {
     case REGISTER_SUCCESS:
@@ -20,7 +20,7 @@ export default function(state=intialState, action) {
         loading: false
       }
       case REGISTER_FAIL:
-        loaclStorage.removeItem('token');
+        localStorage.removeItem('token');
         return {
         state,
         token: null,
