@@ -17,7 +17,7 @@ const Login = ({ login }) => {
 
   const onSubmit = async e => {
     e.preventDefault();
-    login(email, password);
+    login({email, password});
     }
 
   return (

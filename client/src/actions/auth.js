@@ -55,8 +55,8 @@ export const register = ({ name, email, password }) => async dispatch => {
   }
 };
 //Login user
-export const login = ({ email, password }) => async dispatch => {
-  console.log(email);
+export const login = ({email, password}) => async dispatch => {
+  // console.log(email);
   const config = {
     headers: {
       "Content-Type": "application/json",
@@ -65,7 +65,7 @@ export const login = ({ email, password }) => async dispatch => {
   const body = JSON.stringify({ email, password });
   console.log(body);
   try {
-    const res = await axios.post("api/auth", body, config);
+    const res = await axios.post("/api/auth", body, config);
     console.log(res);
     dispatch({
       type: LOGIN_SUCCESS,
