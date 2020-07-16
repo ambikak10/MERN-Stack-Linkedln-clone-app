@@ -22,10 +22,11 @@ export default function(state = initialState, action) {
     };
    case PROFILE_ERROR:
      return {
-      ...state,
-      error: payload,
-      loading: false
-    };
+       ...state,
+       error: payload,
+       loading: false,
+       profile: null
+     };
    case CLEAR_PROFILE:
      return {
        ...state,

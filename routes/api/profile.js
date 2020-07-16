@@ -149,6 +149,7 @@ router.delete('/', auth, async (req, res) => {
     await User.findOneAndRemove({ _id: req.user.id });
     console.log(_id);
     res.json({ msg : 'User deleted'});
+    console.log("account deletion backend")
   } catch {
     console.error(err.message)
     res.status(500).send('Server Error');
