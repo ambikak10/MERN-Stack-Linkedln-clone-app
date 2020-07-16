@@ -141,17 +141,20 @@ try {
 });
 
 // @route    DELETE api/profile
-// @desc     Delete profile, user and post
-// @access   Public
+// @desc     Delete profile, user & posts
+// @access   Private
 router.delete('/', auth, async (req, res) => {
   try {
-    await Profile.findOneAndRemove({user: req.user.id});
+    // Remove user posts
+    await Post.deleteMany({ user: req.user.id });
+    // Remove profile
+    await Profile.findOneAndRemove({ user: req.user.id });
+    // Remove user
     await User.findOneAndRemove({ _id: req.user.id });
-    console.log(_id);
-    res.json({ msg : 'User deleted'});
-    console.log("account deletion backend")
-  } catch {
-    console.error(err.message)
+
+    res.json({ msg: 'User deleted' });
+  } catch (err) {
+    console.error(err.message);
     res.status(500).send('Server Error');
   }
 });
