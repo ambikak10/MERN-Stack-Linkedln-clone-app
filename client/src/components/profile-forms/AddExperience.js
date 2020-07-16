@@ -11,10 +11,10 @@ const AddExperience = ({ addExperience, history }) => {
     location: "",
     from: "",
     to: "",
-    current: "false",
+    current: false,
     description: "",
   });
-  const [toDateDisabled, toggleDisabled] = useState(true);
+  const [toDateDisabled, toggleDisabled] = useState(false);
 
   const { company, title, location, from, to, current, description } = formData;
 
