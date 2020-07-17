@@ -12,8 +12,9 @@ import Spinner from "../layout/Spinner";
 import { getProfileById } from "../../actions/profile";
 
 
-const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
+const Profile = ({ getProfileById, profile: { profile, loading }, auth, match }) => {
   useEffect(() => {
+    console.log(match.params.id);
     getProfileById(match.params.id);
   }, [getProfileById, match.params.id]);
 
