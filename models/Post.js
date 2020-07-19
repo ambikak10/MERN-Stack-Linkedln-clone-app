@@ -45,7 +45,7 @@ const PostSchema = new Schema({
   ],
   date: {
     type: Date,
-    deafault: Date.now
+    default: Date.now
   }
 });
 module.exports = Post = mongoose.model('udemyPosts', PostSchema);
