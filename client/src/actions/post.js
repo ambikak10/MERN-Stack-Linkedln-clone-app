@@ -86,7 +86,11 @@ export const addPost = (formData) => async (dispatch) => {
         "Content-Type": "application/json",
       },
     };
-    await axios.post(`/api/post`);
+    const res = await axios.post(`/api/post`);
+       dispatch({
+         type: ADD_POST,
+         payload: res.data,
+       });
     dispatch(setAlert("Post Created", "success"));
   } catch (err) {
     dispatch({
