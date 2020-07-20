@@ -30,10 +30,10 @@ router.post("/", [auth,
     avatar: user.avatar,
     user: req.user.id
     });
-
+  console.log('post create backend');
     const post = await newPost.save();
 
-    res.json(post);
+    return res.json(post);
   } catch(err) {
     console.error(err.message);
     res.status(500).send('Server Error');

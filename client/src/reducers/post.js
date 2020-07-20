@@ -26,16 +26,16 @@ export default function (state = initialState, action) {
         posts: payload,
         loading: false,
       };
-    // case GET_POST:
-    //   return {
-    //     ...state,
-    //     post: payload,
-    //     loading: false,
-    //   };
+    case GET_POST:
+      return {
+        ...state,
+        post: payload,
+        loading: false,
+      };
     case ADD_POST:
       return {
         ...state,
-        posts:  payload,
+        posts: [payload, ...state.posts],
         loading: false,
       };
     case DELETE_POST:
