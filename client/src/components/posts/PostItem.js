@@ -26,7 +26,7 @@ const PostItem = ({
         Posted on <Moment format='YYYY/MM/DD'>{date}</Moment>
       </p>
 
-      {/* {showActions && ( */}
+      {showActions && (
         <Fragment>
           <button
             onClick={() => addLike(_id)}
@@ -43,7 +43,7 @@ const PostItem = ({
           >
             <i className='fas fa-thumbs-down' />
           </button>
-          <Link to={`/posts/${_id}`} className='btn btn-primary'>
+          <Link to={`/post/${_id}`} className='btn btn-primary'>
             Discussion{" "}
             {comments.length > 0 && (
               <span className='comment-count'>{comments.length}</span>
@@ -59,7 +59,8 @@ const PostItem = ({
             </button>
           )}
         </Fragment>
-      {/* )} */}
+       
+       )} 
     </div>
   </div>
 );
