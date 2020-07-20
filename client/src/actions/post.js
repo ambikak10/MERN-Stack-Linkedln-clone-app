@@ -87,7 +87,7 @@ export const addPost = (formData) => async (dispatch) => {
       },
     };
     await axios.post(`/api/post`);
-    dispatch(setAlert("Post Removed", "success"));
+    dispatch(setAlert("Post Created", "success"));
   } catch (err) {
     dispatch({
       type: POST_ERROR,
