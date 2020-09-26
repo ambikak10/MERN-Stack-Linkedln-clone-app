@@ -24,6 +24,8 @@ const ProfileAbout = ({
         </div>
       ))}
     </div>
+
+    
   </div>
 );
 
